@@ -33,7 +33,7 @@ RUN source activate keras \
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
-  && pip install keras
+  && pip install git+git://github.com/fchollet/keras.git --upgrade --no-deps
 
 # Set up .theanorc for CUDA
 RUN echo "[global]\ndevice=gpu\nfloatX=float32\n[lib]\ncnmem=1\n[nvcc]\nfastmath=True" > /root/.theanorc
