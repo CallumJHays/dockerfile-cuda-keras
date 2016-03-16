@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM kaixhin/cudnn:latest
+FROM kaixhin/cudnn:7.0
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
