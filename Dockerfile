@@ -38,6 +38,8 @@ RUN source activate keras \
 # Set up .theanorc for CUDA
 RUN echo "[global]\ndevice=gpu\nfloatX=float32\n[lib]\ncnmem=1\n[nvcc]\nfastmath=True" > /root/.theanorc
 
+ENV THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32"
+
 RUN source activate keras \
   && git config --global http.sslVerify false \
   && git clone https://github.com/lukovkin/hyperopt.git \
