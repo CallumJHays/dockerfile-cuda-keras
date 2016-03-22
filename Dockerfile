@@ -8,6 +8,9 @@ RUN apt-get update \
     build-essential \
     curl \
     git \
+    mercurial \
+    nano \
+    vim \
   && rm -rf /var/lib/apt/lists/*
   
 # Set CUDA_ROOT
