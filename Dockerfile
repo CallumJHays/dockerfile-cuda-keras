@@ -36,7 +36,7 @@ RUN source activate keras \
   && pip install git+git://github.com/fchollet/keras.git --no-deps
 
 # Set up .theanorc for CUDA
-RUN echo "[global]\ndevice=gpu\nfloatX=float32\n[lib]\ncnmem=1\n[nvcc]\nfastmath=True" > /root/.theanorc
+RUN echo "[global]\ndevice=gpu\nfloatX=float32\nopenmp = True\n[lib]\ncnmem=1\n[nvcc]\nfastmath=True" > /root/.theanorc
 
 ENV THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32"
 
