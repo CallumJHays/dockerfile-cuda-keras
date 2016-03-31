@@ -32,6 +32,7 @@ RUN source activate keras \
     pandas \
     scikit-learn \
     networkx \
+    pyyaml \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
