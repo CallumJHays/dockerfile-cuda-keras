@@ -43,6 +43,7 @@ RUN source activate keras \
 RUN echo "[global]\ndevice=gpu\nfloatX=float32\nopenmp = True\n[lib]\ncnmem=1\n[nvcc]\nfastmath=True" > /root/.theanorc
 
 ENV THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32"
+ENV OMP_NUM_THREADS=8
 
 RUN source activate keras \
   && git config --global http.sslVerify false \
