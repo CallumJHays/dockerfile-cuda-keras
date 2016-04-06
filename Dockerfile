@@ -33,6 +33,7 @@ RUN source activate keras \
     scikit-learn \
     networkx \
     pyyaml \
+    pymongo \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
@@ -44,10 +45,8 @@ RUN echo "[global]\ndevice=gpu\nfloatX=float32\nopenmp = True\n[lib]\ncnmem=1\n[
 
 ENV THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32"
 ENV OMP_NUM_THREADS=8
+ENV PYTHONPATH=/opt/notebook/nnt-backend-py/
 
 RUN source activate keras \
   && git config --global http.sslVerify false \
-  && git clone https://github.com/lukovkin/hyperopt.git \
-  && cd hyperopt/ \
-  && git checkout fmin-fix \
-  && python setup.py install
+  && pip install --no-deps git+https://github.com/lukovkin/hyperopt.git
