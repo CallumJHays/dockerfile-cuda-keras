@@ -34,6 +34,7 @@ RUN source activate keras \
     networkx \
     pyyaml \
     pymongo \
+    smart_open \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
@@ -50,3 +51,5 @@ ENV PYTHONPATH=/opt/notebook/nnt-backend-py/
 RUN source activate keras \
   && git config --global http.sslVerify false \
   && pip install --no-deps git+https://github.com/lukovkin/hyperopt.git
+  && pip install git+https://github.com/lukovkin/holidays.py.git
+  && pip install bdateutil
