@@ -38,7 +38,7 @@ RUN source activate keras \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
-  && pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0rc0-cp34-cp34m-linux_x86_64.whl
+  && pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0rc0-cp34-cp34m-linux_x86_64.whl
   && pip install git+git://github.com/pykalman/pykalman.git \
   && pip install git+git://github.com/fchollet/keras.git --no-deps
 
