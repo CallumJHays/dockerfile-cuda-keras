@@ -1,5 +1,5 @@
 # Start with cuDNN base image
-FROM kaixhin/cudnn:7.0
+FROM kaixhin/cudnn:7.5
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
@@ -7,6 +7,10 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
+    libglib2.0 \
+    libxext6 \
+    libsm6 \
+    libxrender1 \
     git \
     mercurial \
     nano \
@@ -35,10 +39,11 @@ RUN source activate keras \
     pyyaml \
     pymongo \
     smart_open \
+    matplotlib \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
-  && pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0rc0-cp34-cp34m-linux_x86_64.whl \
+  && pip install --ignore-installed https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp34-cp34m-linux_x86_64.whl \
   && pip install git+git://github.com/pykalman/pykalman.git \
   && pip install git+git://github.com/fchollet/keras.git --no-deps
 
