@@ -7,6 +7,10 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
+    libglib2.0 \
+    libxext6 \
+    libsm6 \
+    libxrender1 \
     git \
     mercurial \
     nano \
@@ -35,6 +39,7 @@ RUN source activate keras \
     pyyaml \
     pymongo \
     smart_open \
+    matplotlib \
     quandl
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
