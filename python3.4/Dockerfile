@@ -41,6 +41,10 @@ RUN source activate keras \
     smart_open \
     matplotlib \
     quandl
+	
+RUN source activate keras \
+  && conda install -c Quantopian -y zipline
+  
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
