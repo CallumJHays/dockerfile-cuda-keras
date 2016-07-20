@@ -44,7 +44,7 @@ RUN source activate keras \
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
-  && pip install git+git://github.com/fchollet/keras.git --no-deps
+  && pip install git+git://github.com/fchollet/keras.git --no-deps \
   && pip install git+https://github.com/quantopian/zipline
 
 # Set up .theanorc for CUDA
