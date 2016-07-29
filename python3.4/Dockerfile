@@ -40,6 +40,7 @@ RUN source activate keras \
     pymongo \
     smart_open \
     matplotlib \
+    sqlalchemy \
     quandl
 	
 RUN source activate keras \
