@@ -40,7 +40,9 @@ RUN source activate keras \
     pymongo \
     smart_open \
     matplotlib \
+    sqlalchemy \
     quandl
+    
 RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
