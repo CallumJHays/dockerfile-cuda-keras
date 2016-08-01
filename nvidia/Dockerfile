@@ -41,6 +41,7 @@ RUN source activate keras \
     smart_open \
     matplotlib \
     sqlalchemy \
+    psycopg2 \
     quandl
 	
 RUN source activate keras \
